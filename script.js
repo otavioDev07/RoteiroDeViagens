@@ -15,7 +15,7 @@ async function submitForm(){
     const data = {details: details}
 
     try {
-        const response = await fetch('http://localhost:5000/receita', {
+        const response = await fetch('http://127.0.0.1:5000/viagem', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(data)
@@ -24,8 +24,11 @@ async function submitForm(){
         const result = await response.json()
 
         const responseDiv = document.getElementById('response')
-        if (result.viagem) {
-            responseDiv.innerHTML = result.viagem
+        if (result) {
+            console.log(result)
+            const viagem = result.join('')
+            console.log(viagem)
+            responseDiv.innerHTML = viagem
         } else {
             responseDiv.innerHTML = `<p>Erro: ${result.Erro}</p>`
         }

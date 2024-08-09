@@ -5,7 +5,7 @@ import google.generativeai as gemini
 app = Flask(__name__)
 CORS(app)
 
-gemini.configure(api_key="SUA_CHAVE_API_AQUI") #Adicione aqui sua chave de API do Gemini
+gemini.configure(api_key="AIzaSyDqPqxbooA3im6ZQrXhRWEOio6SE4G81IE") #Adicione aqui sua chave de API do Gemini
 model = gemini.GenerativeModel('gemini-1.5-flash')
 
 @app.route('/viagem', methods=['POST'])
@@ -27,9 +27,9 @@ def make_trip():
         resposta = model.generate_content(prompt)
         print(resposta)
 
-        viagem = '\n'.join(resposta.text.strip().split('\n'))
+        viagem = resposta.text.strip().split('\n')
 
-        return jsonify({"viagem": viagem}), 200
+        return jsonify(viagem), 200
     except Exception as e:
         return jsonify({"Erro": str(e)}), 500
     

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Receita com Ingredientes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Roteiro de Viagem</h1>
+        <div class="formulario">
+            <h3>Informe os detalhes da viagem </h3>
+            <div id="details">
+                <div class="detail-row">
+                    <input type="text" class="detail detail-input" placeholder="Informe um destino...">
+                </div>
+                <div class="detail-row">
+                    <input type="text" class="detail detail-input" placeholder="Informe as atividades recreativas desejadas...">
+                    
+                </div>
+                <div class="detail-row">
+                    <input type="text" class="detail detail-input" placeholder="Informe quantos dias irá durar a Viagem...">
+                </div>
+            </div>
+            <button class="btn-success" onclick="submitForm()">Gerar Viagem</button>
+        </div>
+        <div id="response"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

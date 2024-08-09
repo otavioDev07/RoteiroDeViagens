@@ -9,19 +9,19 @@ gemini.configure(api_key="SUA_CHAVE_API_AQUI") #Adicione aqui sua chave de API d
 model = gemini.GenerativeModel('gemini-1.5-flash')
 
 @app.route('/viagem', methods=['POST'])
-def make_receita():
+def make_trip():
     try:
         dados = request.json
         details = dados.get('details')
 
         prompt = f""" 
-        Crie uma receita somente com os seguintes ingredientes: {details}.
-        Apresente a receita no formato html com codificação UTF-8, sem o header,
-        com o título em hl, subtítulos em h2, tempo de preparo em parágrafo
-        acompanhado de um ícone de relógio, rendimento em porções em parágrafo
-        acompanhado de um ícone de pratos, a lista de ingredientes em lista não
-        ordenada, modo de preparo com passos em lista ordenada, sugestão para
-        servir em parágrafo. Também forneça as medidas corretamento e também ingredientes adicionais (opcionais)
+        Crie um itinerário de viagem somente com as seguintes informações: {details}.
+        O título deve ser em h1, com o destino da viagem.
+        Para cada dia da viagem, adicione um subtítulo em h2, indicando o dia correspondente.
+        Inclua um parágrafo indicando a duração total da viagem.
+        Adicione uma lista não ordenada com as atividades turísticas para cada dia.
+        Para cada atividade, crie um evento em lista ordenada com uma descrição breve.
+        Inclua um parágrafo com uma sugestão para a viagem.
         """
         
         resposta = model.generate_content(prompt)

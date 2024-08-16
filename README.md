@@ -1,4 +1,4 @@
-# Gerador de Receitas - README
+# Assistente de viagens - README
 ## Descrição
 O Assistente de Viagens é uma aplicação web que permite aos usuários inserir informações de viagem e gerar uma viagem personalizada com base nessas informações. A aplicação é composta por uma interface de usuário intuitiva onde as informações podem ser adicionados, e um backend que utiliza um modelo generativo para criar a viagem.
 

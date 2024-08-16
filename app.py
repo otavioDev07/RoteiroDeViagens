@@ -1,12 +1,17 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import google.generativeai as gemini
+
 
 app = Flask(__name__)
 CORS(app)
 
 gemini.configure(api_key="AIzaSyDqPqxbooA3im6ZQrXhRWEOio6SE4G81IE") #Adicione aqui sua chave de API do Gemini
 model = gemini.GenerativeModel('gemini-1.5-flash')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/viagem', methods=['POST'])
 def make_trip():

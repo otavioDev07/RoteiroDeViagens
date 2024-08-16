@@ -4,39 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Assistente de Viagens</title>
-
-    
 </head>
 <body>
     
-    <div class="container">
-        <img class="logo" src="/assets/Voyage AI.png" alt="Descrição da imagem" />
-        <h1>Assistente de Viagens</h1>
-        <h1 class="intro">Nossa API de Planejamento de Viagens facilita a organização da sua próxima aventura. Basta informar o destino, as atividades recreativas desejadas e a duração da viagem. A API criará um roteiro personalizado, otimizando seu tempo e garantindo uma experiência inesquecível.</h1>
-        <div class="formulario">
-            <h3>Informe os detalhes da viagem </h3>
-            <div id="details">
-                <div class="detail-row">
-                    <input type="text" class="detail detail-input" placeholder="Informe um destino...">
-                </div>
-                <div class="detail-row">
-                    <input type="text" class="detail detail-input" placeholder="Informe as atividades desejadas...">
-                    
-                </div>
-                <div class="detail-row">
-                    <input type="number" min="1" class="detail detail-input" placeholder="Informe a duração da Viagem...">
+    <div class="container mt-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-6 text-center">
+                <img class="logo img-fluid" src="/assets/Voyage AI.png" alt="Logo Voyage AI" />
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <h1 class="text-center">Assistente de Viagens</h1>
+                <p class="intro text-center">Nossa API de Planejamento de Viagens facilita a organização da sua próxima aventura. Basta informar o destino, as atividades recreativas desejadas e a duração da viagem. A API criará um roteiro personalizado, otimizando seu tempo e garantindo uma experiência inesquecível.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="formulario">
+                    <h3 class="text-center">Informe os detalhes da viagem</h3>
+                    <div id="details">
+                        <div class="detail-row mb-3">
+                            <input type="text" class="detail detail-input" placeholder="Informe um destino...">
+                        </div>
+                        <div class="detail-row mb-3">
+                            <input type="text" class="detail detail-input" placeholder="Informe as atividades desejadas (ex: pesca, natureza, comida)...">
+                        </div>
+                        <div class="detail-row mb-3">
+                            <input type="number" min="1" class="detail detail-input" placeholder="Informe a quantidade de dias...">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class=" btn-success" onclick="submitForm()">Gerar Viagem</button>
+                    </div>
                 </div>
             </div>
-            <button class="btn-success" onclick="submitForm()">Gerar Viagem</button>
         </div>
-        <div id="response"></div>
-
-        <foooter class="rodape">☯Desenvolvido por Otávio Neto e Gabriel Pedroso☯</foooter>
-        <br>
-        <p>Contato: netootavio223@outlook.com</p> 
+        <div id="response" class="row justify-content-center mt-4">
+            <div class="col-12 col-md-6"></div>
+        </div>
+        <footer class="row justify-content-center mt-5">
+            <div class="col-12 text-center">
+                <p>☯ Desenvolvido por Otávio Neto e Gabriel Pedroso ☯</p>
+                <p>Contato: netootavio223@outlook.com / debarrosrydenpedrosog@gmail.com</p>
+            </div>
+        </footer>
     </div>
 
     <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

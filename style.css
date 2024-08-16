@@ -28,7 +28,7 @@ body {
 .formulario {
     border: 1px solid #7e7d7d;
     border-radius: 10px;
-    width: 60%;
+    width: 100%;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -67,11 +67,11 @@ body {
 .btn-success {
     background-color: rgb(2, 204, 46);
     color: white;
-    font-style: normal;
+    font-weight: bold ;
     border: none;
     border-radius: 50px;
-    height: 50px;
-    width: 100px;
+    height: 5vh;
+    width: 50%;
     cursor: pointer; 
 }
 

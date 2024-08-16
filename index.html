@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Assistente de Viagens</title>
+
+    
 </head>
 <body>
+    
     <div class="container">
+        <img class="logo" src="/assets/Voyage AI.png" alt="Descrição da imagem" />
         <h1>Assistente de Viagens</h1>
+        <h1 class="intro">Nossa API de Planejamento de Viagens facilita a organização da sua próxima aventura. Basta informar o destino, as atividades recreativas desejadas e a duração da viagem. A API criará um roteiro personalizado, otimizando seu tempo e garantindo uma experiência inesquecível.</h1>
         <div class="formulario">
             <h3>Informe os detalhes da viagem </h3>
             <div id="details">
@@ -16,17 +21,20 @@
                     <input type="text" class="detail detail-input" placeholder="Informe um destino...">
                 </div>
                 <div class="detail-row">
-                    <input type="text" class="detail detail-input" placeholder="Informe as atividades recreativas desejadas...">
+                    <input type="text" class="detail detail-input" placeholder="Informe as atividades desejadas...">
                     
                 </div>
                 <div class="detail-row">
-                    <input type="text" class="detail detail-input" placeholder="Informe quantos dias irá durar a Viagem...">
+                    <input type="number" min="1" class="detail detail-input" placeholder="Informe a duração da Viagem...">
                 </div>
             </div>
             <button class="btn-success" onclick="submitForm()">Gerar Viagem</button>
         </div>
         <div id="response"></div>
+
+        <foooter class="rodape"  >☯Desenvolvido por Otávio Neto e Gabriel Pedroso☯</foooter> 
     </div>
+
     <script src="./script.js"></script>
 </body>
 </html>

@@ -25,7 +25,6 @@ async function submitForm(){
 
         const responseDiv = document.getElementById('response')
         if (result) {
-            console.log(result)
             const viagem = result.join('')
             console.log(viagem)
             responseDiv.innerHTML = viagem

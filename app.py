@@ -6,7 +6,7 @@ import google.generativeai as gemini
 app = Flask(__name__)
 CORS(app)
 
-gemini.configure(api_key="SUA_CHAVE_DE_API_AQUI") #Adicione aqui sua chave de API do Gemini
+gemini.configure(api_key="AIzaSyDqPqxbooA3im6ZQrXhRWEOio6SE4G81IE") #Adicione aqui sua chave de API do Gemini
 model = gemini.GenerativeModel('gemini-1.5-flash')
 
 @app.route('/')
@@ -20,7 +20,7 @@ def make_trip():
         details = dados.get('details')
 
         prompt = f""" 
-Crie um itinerário de viagem em HTML para as seguintes informações: {details}. Se por acaso não encontrar a atividade turística para o local informado, diga que não encontrou tais eventos naquela localização e forneça uma sugestão de outro evento. Se você não encontrar a localização pedida, retorne que você não pode encontrar, e somente isso. Não esqueça de sempre retornar uma estrutura HTML, pois sua resposta será aplicada diretamente em minha aplicação. Não escreva "``html" na sua resposta. Na frente do nome de cada atividade insira um emoji correspondente. Se você receber informações que julgar aleatórias ou sem sentido, retorne exatemente isso <h3>Suas informações parecem ser aleatorizadas ou sem sentido. Por favor, digite novamente.</h3>. Nos eventos, retorne o nome dos locais na localização fornecida. Se a localização estiver assim "nome XX", considere que o primeiro é o nome da cidade, e o segundo é o estado.
+Crie um itinerário de viagem em HTML para as seguintes informações: {details}. Se por acaso não encontrar a atividade turística para o local informado, diga que não encontrou tais eventos naquela localização e forneça uma sugestão de outro evento. Se você não encontrar a localização pedida, retorne que você não pode encontrar, e somente isso. Não esqueça de sempre retornar uma estrutura HTML, pois sua resposta será aplicada diretamente em minha aplicação. Não escreva "``html" na sua resposta. Na frente do nome de cada atividade insira um emoji correspondente. Se você receber informações que julgar aleatórias ou sem sentido, retorne exatemente isso <h3>Suas informações parecem ser aleatorizadas ou sem sentido. Por favor, digite novamente.</h3>. Nos eventos, retorne o nome dos locais na localização fornecida. Se a localização estiver assim "nome XX", considere que o primeiro é o nome da cidade, e o segundo é o estado. Se por acaso a entrada da localização não for uma localização que você conheça, retorne <h3>Local não encontrado. Digite novamente!</h3>. SE VOCÊ NÃO CONHECER OU ENCONTRAR A LOCALIZAÇÃO FORNECIDA, NÃO RETORNE INFORMAÇÕES ALEATÓRIAS.
 
 <h1 style="text-align:center;">Título da Viagem</h1>
 <p style="text-align:center;">Duração da Viagem: ... dias</p>

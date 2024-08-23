@@ -57,4 +57,4 @@ Crie um itinerário de viagem em HTML para as seguintes informações: {details}
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

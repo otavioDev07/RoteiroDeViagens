@@ -28,7 +28,7 @@ async function submitForm(){
         if (result) {
             const viagem = result.join('')
             responseDiv.innerHTML = viagem
-            return loading(1)
+            loading(1)
         } else {
             responseDiv.innerHTML = `<p>Erro: ${result.Erro}</p>`
         }
@@ -43,10 +43,16 @@ async function submitForm(){
 
 function loading(a){
     const load = document.getElementById('loading')
+    const response = document.getElementById('response')
+    const button = document.getElementById('buttonViagem')
     if (a == 0){
+        button.disabled = true;
         load.style.display = 'block';
+        response.style.display = 'none';
     } else {
+        button.disabled = false;
         load.style.display = 'none';
+        response.style.display = 'block';
     }
 }
 

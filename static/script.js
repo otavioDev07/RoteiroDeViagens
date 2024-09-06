@@ -1,4 +1,5 @@
 async function submitForm(){
+    loading(0)
     const detailsInputs = document.getElementsByClassName('detail')
     const details = []
     for (let i = 0; i < detailsInputs.length; i++) {
@@ -26,8 +27,8 @@ async function submitForm(){
         const responseDiv = document.getElementById('response')
         if (result) {
             const viagem = result.join('')
-            console.log(viagem)
             responseDiv.innerHTML = viagem
+            return loading(1)
         } else {
             responseDiv.innerHTML = `<p>Erro: ${result.Erro}</p>`
         }
@@ -36,6 +37,16 @@ async function submitForm(){
         const responseDiv = document.getElementById('response')
         responseDiv.innerHTML = `<p>Erro: ${error.message}</p>`
         responseDiv.style.display = 'block'
+        loading(1)
+    }
+}
+
+function loading(a){
+    const load = document.getElementById('loading')
+    if (a == 0){
+        load.style.display = 'block';
+    } else {
+        load.style.display = 'none';
     }
 }
 
